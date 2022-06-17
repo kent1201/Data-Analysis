@@ -1,5 +1,3 @@
-#-*- coding : utf-8-*-
-# coding:unicode_escape
 import os
 import re
 import sys
@@ -35,7 +33,7 @@ def CreateLog():
 
     config = configparser.ConfigParser()
     fp_dir = os.getcwd()
-    config_path = os.path.join(fp_dir, 'Configs', 'logger.ini')
+    config_path = os.path.join(fp_dir, 'configs', 'logger.ini')
     config.read(config_path)
 
     # Get Config
@@ -50,7 +48,7 @@ def CreateLog():
     
     # Create file
     if is_empty(log_filename):    
-        log_filename = "{}_AI_Inference".format(os.getpid())
+        log_filename = "{}.log".format(os.getpid())
     else:
         log_filename = "{}_{}".format(os.getpid(), log_filename)
     log_file_path = os.path.join(log_dir_path, log_filename)
